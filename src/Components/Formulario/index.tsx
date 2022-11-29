@@ -5,6 +5,7 @@ import { ListaSuspensa } from "../ListaSuspensa/Index"
 import { AiOutlineFileImage, AiOutlineUser } from 'react-icons/ai'
 import { RiSuitcaseLine } from 'react-icons/ri'
 import { HiOutlineOfficeBuilding } from 'react-icons/hi'
+import {MdDateRange} from 'react-icons/md'
 import { useState } from "react"
 import { IForms } from "../../Types/Forms"
 
@@ -14,6 +15,7 @@ export const Formulario = ({ ColaborationSingUp, times, cadastrarTimes }: IForms
     const [cargo, setCargo] = useState('')
     const [image, setImage] = useState('')
     const [time, setTime] = useState('')
+    const [data, setData] = useState('')
     const [nomeTime, setNomeTime] = useState('')
     const [corTime, setCorTime] = useState('')
     const [error, setError] = useState(false)
@@ -35,7 +37,8 @@ export const Formulario = ({ ColaborationSingUp, times, cadastrarTimes }: IForms
                 nome,
                 cargo,
                 image,
-                time
+                time,
+                data
             })
         }
     }
@@ -54,7 +57,7 @@ export const Formulario = ({ ColaborationSingUp, times, cadastrarTimes }: IForms
                 <legend>Preencha os dados para criar um card do colaborador</legend>
                 <Campo
                     padding
-                    type="text" 
+                    type="text"
                     mandatory={true}
                     icon={<AiOutlineUser />}
                     placeholder="Digite seu nome"
@@ -96,6 +99,22 @@ export const Formulario = ({ ColaborationSingUp, times, cadastrarTimes }: IForms
                 ) : (
                     <></>
                 )}
+
+                <Campo
+                    padding
+                    type="date"
+                    icon={<MdDateRange />}
+                    placeholder=""
+                    value={data}
+                    Change={(e) => setData(e)}
+                    Style={error ? `error` : ""}
+                />
+                {error ? (
+                    <C.invalid>Campo invalido</C.invalid>
+                ) : (
+                    <></>
+                )}
+
                 <ListaSuspensa
 
                     value={time}

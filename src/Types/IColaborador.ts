@@ -3,6 +3,7 @@ export interface IColaborador {
     cargo: string
     image: string
     time?: string
+    data: string
 }
 
 export interface INewColaborador {

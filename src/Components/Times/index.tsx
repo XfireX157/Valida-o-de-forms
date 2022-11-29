@@ -26,6 +26,7 @@ export const Time = ({ nome, primary, colaboradores, corDeFundo, aoDelet, mudarC
                                 nome={colaborador.nome}
                                 image={colaborador.image}
                                 cargo={colaborador.cargo}
+                                data={colaborador.data}
                                 corDeFundo={corDeFundo}
                                 aoDelet={() => aoDelet(colaborador.nome)}
                             />)}

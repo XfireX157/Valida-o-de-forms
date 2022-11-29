@@ -13,7 +13,7 @@ export const ListaSuspensa = ({icon, Style, value, campo, Change}: IListSuspensa
                     value={value} 
                     onChange={(e) => Change(e.target.value)}>
                         <option></option>
-                        {campo?.map((item: any) => {
+                        {campo?.map((item) => {
                             return <option key={item}>{item}</option>
                         })}
                 </select>

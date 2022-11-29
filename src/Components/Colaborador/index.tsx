@@ -8,11 +8,11 @@ interface IColaborCard {
     corDeFundo: string
     image: string
     cargo: string
+    data: string
     aoDelet: () => void
-
 }
 
-export const Colaborador = ({nome, image, cargo, corDeFundo, aoDelet}: IColaborCard) => {
+export const Colaborador = ({nome, image, cargo, corDeFundo, data,aoDelet}: IColaborCard) => {
 
     const [favorite, setFavorite] = useState(false)
 
@@ -25,6 +25,7 @@ export const Colaborador = ({nome, image, cargo, corDeFundo, aoDelet}: IColaborC
             <C.Rodape>
                 <h4>{nome}</h4>  
                 <h5>{cargo}</h5>
+                <h5>{new Date(data).toLocaleDateString()}</h5>
                 <C.Favorite onClick={() => setFavorite(!favorite)}>
                     {favorite ? <AiFillHeart/> : <AiOutlineHeart/>}
                 </C.Favorite>

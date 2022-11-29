@@ -1,7 +1,7 @@
 import { InputProps } from '../../Types/InputProps'
 import * as C from './Style'
 
-export default function Campo ({Change, type, Style, placeholder, value, padding, icon, mandatory = false}: InputProps) {
+export default function Campo ({Change, type = 'text', Style, placeholder, value, padding, icon, mandatory = false}: InputProps) {
     return(
         <C.Container>
             <C.Label>
